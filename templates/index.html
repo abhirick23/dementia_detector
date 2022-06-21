@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Form</title>
+    <style>
+        *{
+            background-color: whitesmoke;
+        }
+        .heading{
+            background-color: black;
+            text-align: center;
+            padding: 40 px;
+            color: aliceblue;
+            margin: 0px 50px 0px 50px;
+
+        }
+        .instruct{
+            color: red;
+        }
+        .types{
+            text-align: right;
+            padding-right: 30%;
+            border-width: 10px;
+            border: 3px solid black;
+            margin: 0px 50px 0px 50px;
+        }
+        .text{
+            text-align: left;
+            padding-left: 40%;
+            
+        }
+        .button{
+            padding: 5px 100px 5px 100px;
+            margin: 20px 100px 20px 100px;
+            color: blue;
+            border-radius: 3px;
+            background-color: beige;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'result' %}">
+        {% csrf_token %}
+        <div class="parts">
+            <h1 class="heading">Details Form </h1>
+            <p class = "instruct">All the fields are required to be filled. <br>
+            Please refer your prescription for filling the details properly </p>
+            <div class="types">
+
+                <p><div class="text">     Number of visit: </div><input type="number" name ="visit" required></p>
+                <p><div class="text">     MR Delay: </div><input type="number" name ="MR Delay" required></p>
+                <p><div class="text">     Age: </div><input type="number" name ="Age" required></p>
+                <p><div class="text">     Education(in number of years): </div><input type="number" name ="Education" required></p>
+                <p><div class="text">     SES: </div><input type="number" name ="SES" required  step=".0001"></p>
+                <p><div class="text">     MMSE: </div><input type="number" name ="MMSE" required step=".0001"></p>
+                <p><div class="text">     CDR: </div><input type="number" name ="CDR" required step=".0001"></p>
+                <p><div class="text">     eTIV: </div><input type="number" name ="eTIV" required step=".0001"></p>
+                <p><div class="text">     nWBV: </div><input type="number" name ="nWBV" required step=".0001"></p>
+                <p><div class="text">     ASF:</div> <input type="number" name ="ASF" required step=".0001"></p>
+      
+                <input type="submit" name="" value="submit" class="button">
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
